@@ -24,7 +24,7 @@ class SidebarItem extends Component {
       <div key={_index}>
         <ListItem
           className={classes.listItem}
-          selected={selectedNoteIndex == _index}
+          selected={selectedNoteIndex === _index}
           alignItems="flex-start"
         >
           <div

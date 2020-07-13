@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import "./App.css";
 import Editor from "./editor/editor";
 import Sidebar from "./sidebar/sidebar";
-import * as firebase from "firebase";
+import firebase from "firebase/app";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       selectedNoteIndex: null,
-      selectedNode: null,
+      selectedNote: null,
       notes: null,
     };
   }
@@ -29,14 +29,27 @@ class App extends Component {
       });
   };
 
+  selectNote = (note, index) => {
+    this.setState({ selectedNoteIndex: index, selectedNote: note });
+  };
+
   render() {
     return (
       <div>
         <Sidebar
           selectedNoteIndex={this.state.selectedNoteIndex}
           notes={this.state.notes}
+          deletNote={this.deleteNote}
+          selectNote={this.selectNote}
+          newNote={this.newNote}
         ></Sidebar>
-        <Editor></Editor>
+        {this.state.selectedNote ? (
+          <Editor
+            selectedNote={this.state.selectedNote}
+            selectedNoteIndex={this.state.selectedNoteIndex}
+            notes={this.state.notes}
+          ></Editor>
+        ) : null}
       </div>
     );
   }

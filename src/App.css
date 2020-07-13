@@ -6,7 +6,7 @@ html, body {
   padding: 0;
   overflow: hidden;
 }
-#root {
+#note-container {
   height: 100%;
   box-sizing: border-box;
 }
