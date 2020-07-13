@@ -15,19 +15,19 @@ class Editor extends Component {
     };
   }
 
-  componenetDidMount = () => {
+  componentDidMount = () => {
     this.setState({
       text: this.props.selectedNote.body,
-      title: this.props.selecetedNote.title,
+      title: this.props.selectedNote.title,
       id: this.props.selectedNote.id,
     });
   };
 
-  componenetDidUpdate = () => {
+  componentDidUpdate = () => {
     if (this.props.selectedNote.id !== this.state.id) {
       this.setState({
         text: this.props.selectedNote.body,
-        title: this.props.selecetedNote.title,
+        title: this.props.selectedNote.title,
         id: this.props.selectedNote.id,
       });
     }
@@ -44,7 +44,10 @@ class Editor extends Component {
   };
 
   update = debounce(() => {
-    console.log("updating database");
+    this.props.noteUpdate(this.state.id, {
+      title: this.state.title,
+      body: this.state.text,
+    });
   }, 1500);
 
   render() {
