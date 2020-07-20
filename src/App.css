@@ -27,6 +27,7 @@ html, body {
 }
 .ql-editor {
   cursor: text;
+  height: 100%;
 }
 .MuiListItem-root.Mui-selected {
   background-color: #d4d8e8 !important;

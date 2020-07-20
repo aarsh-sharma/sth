@@ -28,6 +28,7 @@ const styles = (theme) => ({
   },
   editorContainer: {
     height: "100%",
+    width: "99%",
     boxSizing: "border-box",
   },
 });

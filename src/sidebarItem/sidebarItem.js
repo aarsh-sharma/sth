@@ -33,7 +33,7 @@ class SidebarItem extends Component {
           >
             <ListItemText
               primary={_note.title}
-              secondary={removeHTMLTags(_note.body.substr(0, 30)) + "..."}
+              secondary={removeHTMLTags(_note.body).substr(0, 30) + (removeHTMLTags(_note.body).length > 30 ? "..." : "")}
             ></ListItemText>
           </div>
           <DeleteIcon

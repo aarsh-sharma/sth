@@ -47,7 +47,7 @@ class Sidebar extends Component {
                 className={classes.newNoteInput}
                 placeholder="Enter note title"
                 onKeyUp={(e) => this.updateTitle(e.target.value)}
-              />
+              ></input>
               <Button
                 className={classes.newNoteSubmitBtn}
                 onClick={this.newNote}
@@ -56,7 +56,6 @@ class Sidebar extends Component {
               </Button>
             </div>
           ) : null}
-
           <List>
             {notes.map((_note, _index) => {
               return (
